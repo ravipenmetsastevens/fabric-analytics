@@ -1379,6 +1379,73 @@
         ]
       },
       {
+        "name": "testview",
+        "sourceLineageTag": "[dbo].[testview]",
+        "columns": [
+          {
+            "name": "HackneyLicenseID",
+            "dataType": "int64",
+            "sourceColumn": "HackneyLicenseID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "HackneyLicenseID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HackneyLicenseBKey",
+            "dataType": "string",
+            "sourceColumn": "HackneyLicenseBKey",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "HackneyLicenseBKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HackneyLicenseCode",
+            "dataType": "string",
+            "sourceColumn": "HackneyLicenseCode",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "HackneyLicenseCode",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "testview",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "vw_PaymentAnalysis",
         "sourceLineageTag": "[dbo].[vw_PaymentAnalysis]",
         "columns": [
